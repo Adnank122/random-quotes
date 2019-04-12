@@ -17,4 +17,4 @@ Written with Reactjs and CSS. Testing with jest.
 
 MIT license.
 
-**Feel free to follow me on twitter 🐦 [@adnank122](https://twitter.com/aakhan122)**
+**Feel free to follow me on twitter  [@adnank122](https://twitter.com/aakhan122)**
