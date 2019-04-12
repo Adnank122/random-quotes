@@ -7,7 +7,8 @@ import colors from "./colors";
 class App extends Component {
   state = {
     color: "",
-    quote: {}
+    quote: {},
+    twitterHref: ""
   };
 
   getRandom = collection => {
@@ -19,7 +20,6 @@ class App extends Component {
   changeState = cb => {
     const color = this.getRandom(colors);
     const quote = this.getRandom(quotes);
-
     this.setState(() => {
       return { color, quote };
     }, cb);
@@ -28,6 +28,14 @@ class App extends Component {
   componentDidMount() {
     this.changeState();
   }
+
+  constructTwitterIconHref = () => {
+    this.setState({
+      twitterIconHref:
+        this.props.twitterIconHref +
+        encodeURIComponent(`${this.state.quoteText} ${this.state.quoteAuthor}`)
+    });
+  };
 
   handleClick = () => {
     this.changeState(() => {
@@ -59,7 +67,9 @@ class App extends Component {
               id="tweet-quote"
               title="Tweet this quote!"
               target="_blank"
-              href="abc.com"
+              rel="noopener noreferrer"
+              href={this.props.twitterHref}
+              onClick={this.constructTwitterIconHref}
             >
               <i className="fab fa-twitter" />
             </a>
