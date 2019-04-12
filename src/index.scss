@@ -16,11 +16,13 @@ body {
   justify-content: center;
   align-content: center;
   height: 100vh;
+  transition: all 0.3s ease-in-out;
 }
 
 div {
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease-in-out;
 }
 
 .container {
@@ -32,7 +34,6 @@ div {
 
 .quote-text {
   text-align: center;
-
   #left-quote {
     font-size: 1r em;
     margin-right: 0.4rem;
@@ -42,4 +43,5 @@ div {
     font-size: 1rem;
     margin-left: 0.4rem;
   }
+  transition: all 0.3s ease-in-out;
 }
